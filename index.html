@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twelve Forces - Kosmische Essentie</title>
+    <title>Twelve Forces</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
@@ -13,27 +13,26 @@
             margin: 0;
             padding: 0;
             background-color: #228B22; /* Deep Forest Green */
-            color: #E0FFFF; /* Lichtblauw-witte tekst */
+            color: #FFFFFF; /* Witte tekst voor goed contrast */
             font-family: 'Roboto', sans-serif;
-            overflow: auto; /* Scrollen toestaan indien nodig */
+            overflow: hidden; /* Voorkom scrollbalken */
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             position: relative;
+            font-size: 2em; /* Grotere tekst voor duidelijkheid */
+            text-align: center;
         }
 
-        /* Centraal content blok */
-        .content {
+        /* Centraal element voor de tekst */
+        .liquidity-text {
             position: relative;
             z-index: 10;
-            text-align: center;
-            padding: 40px;
-            max-width: 900px;
-            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparante achtergrond voor leesbaarheid */
-            border-radius: 15px;
-            box-shadow: 0 0 40px rgba(136, 204, 238, 0.4); /* Zachte gloed om het blok */
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.4); /* Licht doorschijnende achtergrond */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             animation: fadeIn 2s ease-out;
         }
 
@@ -42,72 +41,22 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3.8em;
-            margin-bottom: 15px;
-            color: #88ccee; /* Helderblauwe kleur voor de titel */
-            text-shadow: 0 0 20px rgba(136, 204, 238, 0.8);
-            letter-spacing: 2px;
-        }
-
-        p {
-            font-size: 1.3em;
-            line-height: 1.7;
-            max-width: 700px;
-            margin: 0 auto 35px auto;
-            color: #E0FFFF;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-        }
-
-        /* Footer met de vereiste programmeertaal tekst */
-        .footer {
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-            text-align: center;
-            font-size: 0.9em;
-            color: rgba(255, 255, 255, 0.4);
-            z-index: 1; /* Zorg dat de footer boven de achtergrond staat */
-        }
-
-        /* Responsiviteit voor kleinere schermen */
+        /* Responsiviteit */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em;
+            body {
+                font-size: 1.5em;
             }
-            p {
-                font-size: 1em;
-            }
-            .content {
-                padding: 20px;
-                margin: 20px; /* Kleinere marges op mobiel */
-            }
-            .footer {
-                position: relative; /* Niet meer vast onderaan, maar na de content */
-                margin-top: 30px;
-                padding-bottom: 10px;
+            .liquidity-text {
+                padding: 15px;
+                margin: 15px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="content">
-        <h1>Twelve Forces</h1>
-        <p>
-            Welkom in de uitgestrektheid. De "Twelve Forces" symboliseren de fundamentele, vaak onzichtbare, principes en interacties die de structuur, beweging en evolutie van het universum bepalen. Denk aan de kosmische wetten, de balans van energie, de verbindingen tussen sterrenstelsels, en de diepe ritmes van de materie. Ze representeren de complexe harmonie die alles in de kosmos vormgeeft.
-        </p>
-    </div>
-
-    <div class="footer">
-        <script>
-            // We provide liquidity to trade.
-            console.log("we provide liquidity to trade");
-        </script>
-        <noscript>
-            <p>JavaScript is nodig voor de volledige ervaring.</p>
-        </noscript>
+    <div class="liquidity-text">
+        <p>we provide liquidity to trade</p>
     </div>
 
 </body>
