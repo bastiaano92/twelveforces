@@ -1,63 +1,70 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twelve Forces</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        /* Algemene styling */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #228B22; /* Deep Forest Green */
-            color: #FFFFFF; /* Witte tekst voor goed contrast */
-            font-family: 'Roboto', sans-serif;
-            overflow: hidden; /* Voorkom scrollbalken */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            position: relative;
-            font-size: 2em; /* Grotere tekst voor duidelijkheid */
-            text-align: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TwelveForces</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: radial-gradient(ellipse at center, #f8dac7 0%, #f1a37d 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        /* Centraal element voor de tekst */
-        .liquidity-text {
-            position: relative;
-            z-index: 10;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.4); /* Licht doorschijnende achtergrond */
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 2s ease-out;
-        }
+    h1 {
+      color: #1c1c1c;
+      font-size: 2.5em;
+      font-weight: 400;
+      text-align: center;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    .glow {
+      position: absolute;
+      width: 50vmin;
+      height: 50vmin;
+      background: radial-gradient(circle, rgba(255,183,149,0.6), rgba(255,183,149,0.1));
+      border-radius: 50%;
+      filter: blur(60px);
+      animation: pulse 8s ease-in-out infinite;
+      z-index: 0;
+    }
 
-        /* Responsiviteit */
-        @media (max-width: 768px) {
-            body {
-                font-size: 1.5em;
-            }
-            .liquidity-text {
-                padding: 15px;
-                margin: 15px;
-            }
-        }
-    </style>
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+      }
+      50% {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      height: 28px;
+      z-index: 2;
+    }
+  </style>
 </head>
 <body>
-
-    <div class="liquidity-text">
-        <p>we provide liquidity to trade</p>
-    </div>
-
+  <img src="12FORCES_logo_x0,2.png" alt="12FORCES Logo" class="logo" />
+  <div class="glow"></div>
+  <div class="content">
+    <h1>we invest in trade</h1>
+  </div>
 </body>
 </html>
