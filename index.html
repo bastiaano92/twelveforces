@@ -11,8 +11,8 @@
       overflow: hidden;
       height: 100%;
       font-family: 'Courier New', Courier, monospace;
-      background: #000;
-      color: #fff;
+      background: radial-gradient(ellipse at center, #fce4d6 0%, #f5c2a3 50%, #f1a07d 100%);
+      color: #1c1c1c;
     }
 
     canvas {
@@ -35,6 +35,7 @@
       font-size: 2em;
       font-weight: 400;
       letter-spacing: 1px;
+      margin: 0;
     }
 
     .logo {
@@ -47,7 +48,7 @@
   </style>
 </head>
 <body>
-  <img src="12FORCES_logo_x0,2.png" alt="12FORCES Logo" class="logo" />
+  <img src="12FORCES_logo_transparant_x0,2.png" alt="12FORCES Logo" class="logo" />
   <canvas id="orbCanvas"></canvas>
   <div class="content">
     <h1>we invest in trade</h1>
@@ -73,11 +74,12 @@
 
       const x = width / 2;
       const y = height / 2;
-      const radius = 100 + Math.sin(time * 0.02) * 10;
+      const radius = 140 + Math.sin(time * 0.02) * 20;
 
       const gradient = ctx.createRadialGradient(x, y, 0, x, y, radius);
-      gradient.addColorStop(0, 'rgba(255, 180, 130, 0.6)');
-      gradient.addColorStop(1, 'rgba(255, 180, 130, 0)');
+      gradient.addColorStop(0, 'rgba(255, 183, 149, 0.8)');
+      gradient.addColorStop(0.3, 'rgba(255, 183, 149, 0.3)');
+      gradient.addColorStop(1, 'rgba(255, 183, 149, 0)');
 
       ctx.beginPath();
       ctx.fillStyle = gradient;
