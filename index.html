@@ -8,47 +8,33 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
       overflow: hidden;
-      font-family: 'Helvetica Neue', sans-serif;
-      background: radial-gradient(ellipse at center, #f8dac7 0%, #f1a37d 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 100%;
+      font-family: 'Courier New', Courier, monospace;
+      background: #000;
+      color: #fff;
     }
 
-    h1 {
-      color: #1c1c1c;
-      font-size: 2.5em;
-      font-weight: 400;
-      text-align: center;
-    }
-
-    .glow {
+    canvas {
       position: absolute;
-      width: 50vmin;
-      height: 50vmin;
-      background: radial-gradient(circle, rgba(255,183,149,0.6), rgba(255,183,149,0.1));
-      border-radius: 50%;
-      filter: blur(60px);
-      animation: pulse 8s ease-in-out infinite;
+      top: 0;
+      left: 0;
       z-index: 0;
     }
 
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-        opacity: 0.6;
-      }
-      50% {
-        transform: scale(1.1);
-        opacity: 1;
-      }
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 1;
     }
 
-    .content {
-      position: relative;
-      z-index: 1;
+    .content h1 {
+      font-size: 2em;
+      font-weight: 400;
+      letter-spacing: 1px;
     }
 
     .logo {
@@ -62,9 +48,47 @@
 </head>
 <body>
   <img src="12FORCES_logo_x0,2.png" alt="12FORCES Logo" class="logo" />
-  <div class="glow"></div>
+  <canvas id="orbCanvas"></canvas>
   <div class="content">
     <h1>we invest in trade</h1>
   </div>
+
+  <script>
+    const canvas = document.getElementById('orbCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    let time = 0;
+
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+
+      const x = width / 2;
+      const y = height / 2;
+      const radius = 100 + Math.sin(time * 0.02) * 10;
+
+      const gradient = ctx.createRadialGradient(x, y, 0, x, y, radius);
+      gradient.addColorStop(0, 'rgba(255, 180, 130, 0.6)');
+      gradient.addColorStop(1, 'rgba(255, 180, 130, 0)');
+
+      ctx.beginPath();
+      ctx.fillStyle = gradient;
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.fill();
+
+      time++;
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+  </script>
 </body>
 </html>
